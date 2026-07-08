@@ -236,23 +236,6 @@
     .hero-badge:hover .hero-rocket, .hero-cta:hover .hero-arrow { transform: none; }
   }
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '418549630012363');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=418549630012363&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body class="font-sans antialiased">
 
@@ -562,9 +545,6 @@ src="https://www.facebook.com/tr?id=418549630012363&ev=PageView&noscript=1"
       const data = await res.json().catch(function () { return {}; });
       if (res.ok && (data.success === 'true' || data.success === true)) {
         show('Thanks, ' + name.split(' ')[0] + "! Your message has been received — we'll be in touch soon.", true);
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
-        }
         form.reset();
       } else {
         show(data.message || 'Something went wrong. Please email hello@socialmasla.com directly.', false);

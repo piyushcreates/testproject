@@ -2,6 +2,12 @@
 
 All notable changes to the **Social Masla** project will be documented in this file. This project adheres to Semantic Versioning (`MAJOR.MINOR.PATCH`).
 
+## [1.4.0] - 2026-07-08
+
+### Removed
+- Removed Meta (Facebook) Pixel base scripts and PageView tracking from all pages.
+- Removed custom Lead event tracking from the Home and Contact form submission handlers.
+
 ## [1.3.0] - 2026-07-08
 
 ### Added
