@@ -2,6 +2,12 @@
 
 All notable changes to the **Social Masla** project will be documented in this file. This project adheres to Semantic Versioning (`MAJOR.MINOR.PATCH`).
 
+## [1.3.0] - 2026-07-08
+
+### Added
+- Standard robots meta tags (`noindex, nofollow, noarchive`) added to all pages to prevent search engines and AI crawlers from indexing or tracking the website.
+- Updated `robots.txt` to explicitly disallow all user agents from crawling any directories.
+
 ## [1.2.0] - 2026-07-08
 
 ### Added

@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://socialmasla.com/sitemap.xml
+Disallow: /
