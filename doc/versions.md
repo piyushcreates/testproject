@@ -2,6 +2,11 @@
 
 All notable changes to the **Social Masla** project will be documented in this file. This project adheres to Semantic Versioning (`MAJOR.MINOR.PATCH`).
 
+## [1.1.1] - 2026-07-08
+
+### Changed
+- Updated the primary hero tagline from "Less noise. More growth." to "Premium growth marketing consultancy" on the home (`index.html`) and about (`about.html`) pages.
+
 ## [1.1.0] - 2026-07-08
 
 ### Added
