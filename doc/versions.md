@@ -2,6 +2,13 @@
 
 All notable changes to the **Social Masla** project will be documented in this file. This project adheres to Semantic Versioning (`MAJOR.MINOR.PATCH`).
 
+## [1.2.0] - 2026-07-08
+
+### Added
+- Meta (Facebook) Pixel integration with ID `418549630012363` added across all static pages (`index.html`, `about.html`, `consultation.html`, `contact.html`).
+- Standard `PageView` event tracked on every page load.
+- Custom `Lead` event tracked on successful contact form submission on both the Home page (`index.html`) and Contact page (`contact.html`).
+
 ## [1.1.1] - 2026-07-08
 
 ### Changed
