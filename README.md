@@ -36,7 +36,7 @@ All pages share a common header/nav, footer, design tokens, and light/dark theme
 - **Animated trust strip** (home) — stat numbers count up and fade in when scrolled into view.
 - **Hero micro-interactions** (home) — subtle, hover-only motion: eyebrow lift, a soft text sheen on "More growth.", and button/arrow movement.
 - **Interactive particle background** (home) — a lightweight `<canvas>` field of drifting dashes that react to the cursor; pauses off-screen and respects reduced-motion.
-- **Contact forms** — wired to [FormSubmit](https://formsubmit.co) with client-side validation, a honeypot bot trap, and **business-email-only** filtering (blocks free/disposable providers).
+- **Contact forms** — mocked client-side with a submission delay simulation, client-side validation, a honeypot bot trap, and **business-email-only** filtering (blocks free/disposable providers).
 - **Accessibility** — `prefers-reduced-motion` is honored across every animation (counters, hero, particles); decorative emoji/icons are `aria-hidden`.
 
 ---
@@ -95,11 +95,9 @@ python3 -m http.server 4599
 
 ---
 
-## Forms & FormSubmit setup
+## Forms & submission setup
 
-Both contact forms POST to FormSubmit's AJAX endpoint, delivering to **hello@socialmasla.com**.
-
-> **One-time activation required:** the first real submission triggers a confirmation email from FormSubmit to that inbox. Click its activation link once — until then, submissions are not delivered. To change the destination address, update the `FORM_ENDPOINT` constant in [`index.html`](index.html) and [`contact.html`](contact.html).
+Both contact forms simulate a submission delay (~800ms) client-side and display a success state immediately without calling any external email submission services or endpoints (removing any email dispatch functionality).
 
 Validation is client-side (a deterrent, not a hard gate): it blocks free/personal and disposable email domains and uses a hidden honeypot field to catch bots.
 
@@ -110,4 +108,4 @@ Validation is client-side (a deterrent, not a hard gate): it blocks free/persona
 - **Tailwind is loaded via CDN**, which prints a console warning that it's not for production. For a production deploy, compile Tailwind with the CLI/PostCSS instead.
 - **Shared markup is duplicated** across the four HTML files (header, footer, design tokens). A change to the nav or palette must be made in each file. Consolidating into a shared CSS file / templating step is a natural next improvement.
 - The **full-screen mobile menu** currently exists on the home page only; the other pages don't yet have a mobile nav.
-- Client-side email validation can be bypassed by a determined bot; FormSubmit's own server-side protections are the backstop.
+- Client-side email validation can be bypassed by a determined bot; since submissions are now mocked client-side, no spam or data is actually sent or saved.

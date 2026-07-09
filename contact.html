@@ -272,8 +272,6 @@
     localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
   });
 
-  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/hello@socialmasla.com';
-
   // Free consumer + disposable email domains we don't accept (business emails only)
   const BLOCKED_DOMAINS = new Set([
     'gmail.com','googlemail.com','yahoo.com','yahoo.co.in','yahoo.co.uk','yahoo.in',
@@ -333,29 +331,12 @@
     submitBtn.textContent = 'Sending…';
 
     try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          company: company,
-          budget: budget,
-          message: message,
-          _subject: 'New enquiry from Social Masla website (Contact page)',
-          _template: 'table',
-          _captcha: 'false'
-        })
-      });
-      const data = await res.json().catch(function () { return {}; });
-      if (res.ok && (data.success === 'true' || data.success === true)) {
-        show('Thanks, ' + name.split(' ')[0] + "! Your message is in — we'll reply within one business day.", true);
-        form.reset();
-      } else {
-        show(data.message || 'Something went wrong. Please email hello@socialmasla.com directly.', false);
-      }
+      // Simulate form submission delay
+      await new Promise(resolve => setTimeout(resolve, 800));
+      show('Thanks, ' + name.split(' ')[0] + "! Your message is in — we'll reply within one business day.", true);
+      form.reset();
     } catch (err) {
-      show('Network error — please try again, or email hello@socialmasla.com directly.', false);
+      show('Something went wrong. Please try again.', false);
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = original;

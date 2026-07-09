@@ -2,6 +2,16 @@
 
 All notable changes to the **Social Masla** project will be documented in this file. This project adheres to Semantic Versioning (`MAJOR.MINOR.PATCH`).
 
+## [1.5.0] - 2026-07-09
+
+### Removed
+- Removed FormSubmit.co AJAX endpoint integration from both Home (`index.html`) and Contact (`contact.html`) pages.
+- Removed automated email notifications to `hello@socialmasla.com` from form submissions.
+
+### Changed
+- Refactored form submission handlers to mock form submission client-side (with a simulated network delay) to prevent receiving emails from the project.
+- Updated project documentation (`README.md`) to reflect the removal of external form submission endpoints.
+
 ## [1.4.0] - 2026-07-08
 
 ### Removed
